@@ -1,0 +1,9 @@
+name: env2
+on: workflow_dispatch
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}
+    steps:  
+      - run: echo "${ACTOR}"
