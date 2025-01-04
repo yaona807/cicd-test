@@ -1,0 +1,11 @@
+name: compare
+on: workflow_dispatch
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep '_FUNC'
+        env:
+          CONTAINS_FUNC: ${{ contain('Hello', 'ell') }}
+          START_WITH_FUNC: ${{ startWith('Hello', 'He') }}
+          ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }}
