@@ -1,0 +1,9 @@
+name: status
+on: workflow_dispatch
+jobs:
+  fail:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 1
+      - run: echo "Hello"
+        if: ${{ failure() }}
