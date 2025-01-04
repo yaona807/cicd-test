@@ -1,0 +1,8 @@
+name: skip
+on: workflow_dispatch
+jobs:
+  skip-or-run:
+    if: ${{ github.actor != 'yaona807' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
