@@ -1,0 +1,14 @@
+name: multi dimension matrix
+on: workflow_dispatch
+jobs:
+  print:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        version: [18, 20]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-vesion: ${{ matrix.version }}
+      - run: echo "${RUNNER_OS}" && node --version
