@@ -1,0 +1,10 @@
+name: log group
+on: workflow_dispatch
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run:  |
+          echo "::group::Show environment variables"
+          printenv
+          echo "::endgroup::"
