@@ -1,7 +1,5 @@
 name: static analysis
-on:
-  pull_request:
-    paths: ['.github/workflows/*.yml', '.github/workflows/*.yaml']
+on: workflow_dispatch
 defaults:
   run:
     shell: bash
