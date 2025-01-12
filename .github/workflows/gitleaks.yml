@@ -1,0 +1,11 @@
+name: Gitleaks
+on: workflow_dispatch
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" \
+          zricethezav/gitleaks detect --source="$(pwd)" --verbose --redact \
+          --log-opts="--all --full-history"
