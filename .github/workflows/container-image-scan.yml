@@ -4,7 +4,7 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: aquasecurity/trivy-action@0.30.0
+      - uses: aquasecurity/trivy-action@0.31.0
         with:
           image-ref: nginx:1.11.0
           severity: CRITICAL, HIGH
